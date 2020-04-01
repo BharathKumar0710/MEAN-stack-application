@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const passport = require("passport");
 const mysql = require("mysql");
+// const config = require('./config/database');
+// mysql.connect(config.connection);
 
 const app = express();
 
@@ -15,6 +17,7 @@ var connection = mysql.createConnection({
   database: "mean_db"
 });
 
+// Routes Folder
 const users = require("./routes/users");
 app.use("/users", users);
 
@@ -23,6 +26,9 @@ const port = 3000;
 
 // CORS middleware
 app.use(cors());
+
+// Set static folder
+app.use(express.static(path.join(__dirname, "public")));
 
 //BodyParser Middleware
 app.use(bodyParser.json());
