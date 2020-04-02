@@ -14,11 +14,8 @@ router.post("/auth", (req, res, next) => {
 // For /users/profile
 router.get("/profile", (req, res, next) => {
   res.send("PROFILE");
-});
+}); 
 
-// For /users/validate
-router.get("/validate", (req, res, next) => {
-  res.send("VALIDATE");
-});
+
 
 module.exports = router;
